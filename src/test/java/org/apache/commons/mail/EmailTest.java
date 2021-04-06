@@ -129,4 +129,13 @@ public class EmailTest {
 		assertEquals("abc@abc.com", email.getHostName() );
 	
 	}
+	
+	@Test
+	public void sentFromTest() //tetsing getHostName with null
+	{
+		email.setHostName(null);
+		String name = email.getHostName();
+		
+		assertEquals(null, name);
+	}
 }
