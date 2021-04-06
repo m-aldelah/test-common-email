@@ -156,4 +156,10 @@ public class EmailTest {
 		//Session session = email.getMailSession();
 		email.setMailSession(sess); //tetsing Session
 	}
+	
+	@Test
+	public void TestGetSocketConnectionTimeOut()
+	{
+		int temp = email.getSocketConnectionTimeout(); //tetsing the function
+	}
 }
