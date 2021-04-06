@@ -78,4 +78,35 @@ public class EmailTest {
 		email.addReplyTo("abcd@abc.com", "abc"); //tetsing replytotest
 		assertEquals("abcd@abc.com", "");
 	}
+	
+	@Test
+	public void buildMimeMessageTest() throws Exception
+	{
+		ArrayList<InternetAddress> replyList2 = new ArrayList<InternetAddress>();
+	
+		//tetsing functions from class
+		email.setHostName("localhost");
+		email.setSmtpPort(1234);
+		email.setFrom("abc@abc.com");
+		email.addTo("c@d.com");
+		email.setSubject("test mail");
+		email.setCharset("ISO-8859-1");
+		email.setContent("test content", "text");
+		email.addCc("email@test.com");
+		email.addBcc("email@test.com");
+		email.addHeader("test", "abc");
+		email.addReplyTo("abc@abc.com");
+		
+		MimeMultipart mim = new MimeMultipart(); //tests getMailSession()
+		email.emailBody = mim;
+		email.setContent(mim);
+		email.setSmtpPort(123);
+		
+		
+		email.replyList = replyList2;
+	
+	
+		
+		email.buildMimeMessage(); //running buildMimeMessage, deafult test
+	}
 }
