@@ -109,4 +109,24 @@ public class EmailTest {
 		
 		email.buildMimeMessage(); //running buildMimeMessage, deafult test
 	}
+	
+	@Test
+	public void getHostNameTest() //tetsing getHostName
+	{
+		email.setHostName("sampleName");
+		String name = email.getHostName();
+		
+		assertEquals("sampleName", name); //checking if theyre equal
+	}
+	
+	@Test
+	public void getHostNamePropTest()
+	{
+		Properties properties = new Properties();
+		Session session = Session.getDefaultInstance(properties, null);
+		properties.put(EmailConstants.MAIL_HOST, "abc@abc.com");
+		email.setMailSession(session);
+		assertEquals("abc@abc.com", email.getHostName() );
+	
+	}
 }
