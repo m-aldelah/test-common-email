@@ -138,4 +138,14 @@ public class EmailTest {
 		
 		assertEquals(null, name);
 	}
+	
+	@Test
+	public void testGetSentDate()
+	{
+		
+		Date date = new Date(123123); //tetsing with a date
+		email.setSentDate(date);
+		email.getSentDate();
+		
+	}
 }
