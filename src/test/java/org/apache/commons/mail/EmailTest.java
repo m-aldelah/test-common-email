@@ -38,4 +38,11 @@ public class EmailTest {
 	public void tearDownEmailTest() throws Exception{
 		
 	}
+	
+	@Test
+	public void testAddBcc() throws Exception //testing AddBcc
+	{
+		email.addBcc(TEST_EMAILS); //tetsing with test email
+		assertEquals(3, email.getBccAddresses().size());
+	}
 }
