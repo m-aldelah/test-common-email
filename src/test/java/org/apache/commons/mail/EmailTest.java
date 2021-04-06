@@ -148,4 +148,12 @@ public class EmailTest {
 		email.getSentDate();
 		
 	}
+	
+	@Test
+	public void testGetMailSession() throws EmailException 
+	{
+		Session sess = email.getMailSession();
+		//Session session = email.getMailSession();
+		email.setMailSession(sess); //tetsing Session
+	}
 }
