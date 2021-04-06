@@ -39,13 +39,6 @@ public class EmailTest {
 		
 	}
 	
-	@Test
-	public void testAddBcc() throws Exception //testing AddBcc
-	{
-		email.addBcc(TEST_EMAILS); //tetsing with test email
-		assertEquals(3, email.getBccAddresses().size());
-	}
-	
 	
 	@Test 
 	public void addReplyToTest() throws Exception
@@ -164,5 +157,11 @@ public class EmailTest {
 		email.addHeader("abcde@abc.com", "one");
 	}
 	
+	@Test
+	public void testAddBcc() throws Exception //testing AddBcc
+	{
+		email.addBcc(TEST_EMAILS); //tetsing with test email
+		assertEquals(3, email.getBccAddresses().size());
+	}
 	
 }
