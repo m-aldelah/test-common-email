@@ -53,4 +53,22 @@ public class EmailTest {
 		email.addCc(TEST_EMAILS); //testing with test email
 		assertEquals(3, email.getCcAddresses().size());
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void addHeaderTest() //testing addHeader function
+	{
+		email.addHeader(null, null); //creating header with null parameters
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void addHeaderTest2() 
+	{
+		email.addHeader("abcde@abc.com", ""); //creating header test with one empty parameter
+	}
+	
+	@Test
+	public void addHeaderTestValid() //valid header test
+	{
+		email.addHeader("abcde@abc.com", "one");
+	}
 }
