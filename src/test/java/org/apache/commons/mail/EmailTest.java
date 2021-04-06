@@ -71,4 +71,11 @@ public class EmailTest {
 	{
 		email.addHeader("abcde@abc.com", "one");
 	}
+	
+	@Test 
+	public void addReplyToTest() throws Exception
+	{
+		email.addReplyTo("abcd@abc.com", "abc"); //tetsing replytotest
+		assertEquals("abcd@abc.com", "");
+	}
 }
