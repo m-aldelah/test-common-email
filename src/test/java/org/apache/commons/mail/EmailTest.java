@@ -16,9 +16,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.tools.javac.util.Assert;
-import com.sun.tools.javac.util.List;
-
 public class EmailTest {
 	private static final String[] TEST_EMAILS = { "ab@bc.com", "a.b@c.org", "abcdefghijklmnopqrst@abcdefghijklmnopqrst.com.bd"};
 	private static final Authenticator Authenticator = null;
